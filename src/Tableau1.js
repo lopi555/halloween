@@ -110,7 +110,7 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         let gMid2=this.add.image(gMid1.x+gMid1.width,350, 'gMid').setOrigin(0,0); //on rajoute 1 px pour l'exemple
-        this.groundContainer.add(gMid2);
+        this.groundContainer.add(gMid2); // peut être fait en boucle
         /**
          * Terrain 3
          * @type {Phaser.GameObjects.Image}
