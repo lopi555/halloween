@@ -109,10 +109,15 @@ class Tableau1 extends Phaser.Scene{
         this.bg1Container.add(bg1Tree3);
         bg1Tree3.angle=0; //pencher l'arbre de tant degrès
 
+        //terrain 1
 
         let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain3);
 
+        //terraine deux
+
+        let bg1Terrain1=this.add.image(-400,200, 'bg1-terrain-1').setOrigin(0,0);
+        this.bg1Container.add(bg1Terrain1);
         //-------------ground (premier plan noir)---------------------------
 
         /**
