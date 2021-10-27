@@ -15,7 +15,10 @@ class Tableau1 extends Phaser.Scene{
 
         //bg 1 (gris légèrement flou)
         this.load.image('bg1-terrain-3', 'assets/level/background-1/bg-terrain-3.png');
-        this.load.image('bg1-tree-1', 'assets/level/background-1/bg2-tree-1.png');
+        this.load.image('bg1-terrain-1', 'assets/level/background-1/bg-terrain-1.png');
+        this.load.image('bg1-tree-1', 'assets/level/background-1/bg-tree-1.png');
+        this.load.image('bg1-tree-3', 'assets/level/background-1/bg-tree-3.png');
+
 
         //ground (premier plan noir)
         this.load.image('gMid', 'assets/level/ground/g-mid.png');
@@ -97,12 +100,17 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         //arbre 1 plan millieu
-        let bg1Tree1=this.add.image(700,-60, 'bg1-tree-1').setOrigin(0,0);
+        let bg1Tree1=this.add.image(-40,-150, 'bg1-tree-1').setOrigin(0,0);
         this.bg1Container.add(bg1Tree1);
-        bg1Tree1.angle=-7; //pencher l'arbre de tant degrès
+        bg1Tree1.angle=0; //pencher l'arbre de tant degrès
+
+        //arbre 2 plan millieu
+        let bg1Tree3=this.add.image(120,-230, 'bg1-tree-3').setOrigin(0,0);
+        this.bg1Container.add(bg1Tree3);
+        bg1Tree3.angle=0; //pencher l'arbre de tant degrès
 
 
-        let bg1Terrain3=this.add.image(-300,200, 'bg1-terrain-3').setOrigin(0,0);
+        let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain3);
 
         //-------------ground (premier plan noir)---------------------------
@@ -116,7 +124,7 @@ class Tableau1 extends Phaser.Scene{
          * Arbre
          * @type {Phaser.GameObjects.Image}
          */
-        let tree1=this.add.image(300,350, 'gTree1').setOrigin(0,1);
+        let tree1=this.add.image(300,450, 'gTree1').setOrigin(0,1);
        // tree1.setTintFill(0xFF0000); // pratique pour dbugger A ENLEVER A LA FIN
         this.groundContainer.add(tree1);
         /**
