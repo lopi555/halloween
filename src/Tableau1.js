@@ -25,6 +25,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gMid', 'assets/level/ground/g-mid.png');
         this.load.image('gRight', 'assets/level/ground/g-right.png');
         this.load.image('gTree1', 'assets/level/ground/g-tree-1.png');
+        this.load.image('gTree2', 'assets/level/ground/g-tree-2.png');
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -71,10 +72,10 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         // première montagne
-        let bg2Terrain2=this.add.image(-100,150, 'bg2-terrain-2').setOrigin(0,0);
+        let bg2Terrain2=this.add.image(-150,150, 'bg2-terrain-2').setOrigin(0,0);
         this.bg2Container.add(bg2Terrain2);
         // deuxième montagne
-        let bg2Terrain4=this.add.image(650,200, 'bg2-terrain-4').setOrigin(0,0);
+        let bg2Terrain4=this.add.image(650,100, 'bg2-terrain-4').setOrigin(0,0);
         this.bg2Container.add(bg2Terrain4);
         /**
          * Arbre dans bg2
@@ -122,8 +123,8 @@ class Tableau1 extends Phaser.Scene{
         let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain3);
 
-        //terraine deux
-        let bg1Terrain1=this.add.image(650,300, 'bg1-terrain-1').setOrigin(0,0);
+        //terraine 2
+        let bg1Terrain1=this.add.image(650,350, 'bg1-terrain-1').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain1);
         bg1Terrain1.scale=0.6;
 
@@ -136,12 +137,19 @@ class Tableau1 extends Phaser.Scene{
          */
         this.groundContainer=this.add.container(0,0);
         /**
-         * Arbre
+         * Arbre 3
          * @type {Phaser.GameObjects.Image}
          */
         let tree1=this.add.image(880,450, 'gTree1').setOrigin(0,1);
         this.groundContainer.add(tree1);
         tree1.angle=350;
+
+        // arbre 1
+        let tree2=this.add.image(200,450, 'gTree2').setOrigin(0,1);
+        this.groundContainer.add(tree2);
+        tree2.angle=0;
+        tree2.scale=0.8
+
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
