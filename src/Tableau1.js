@@ -17,6 +17,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('bg1-terrain-3', 'assets/level/background-1/bg-terrain-3.png');
         this.load.image('bg1-terrain-1', 'assets/level/background-1/bg-terrain-1.png');
         this.load.image('bg1-tree-1', 'assets/level/background-1/bg-tree-1.png');
+        this.load.image('bg1-tree-2', 'assets/level/background-1/bg-tree-2.png');
         this.load.image('bg1-tree-3', 'assets/level/background-1/bg-tree-3.png');
 
 
@@ -111,16 +112,22 @@ class Tableau1 extends Phaser.Scene{
         bg1Tree3.angle=0; //pencher l'arbre de tant degrès
         bg1Tree3.scale=0.7;
 
-        //terrain 1
+        //arbre 3 plan millieu
+        let bg1Tree2=this.add.image(880,-30, 'bg1-tree-2').setOrigin(0,0);
+        this.bg1Container.add(bg1Tree2);
+        bg1Tree2.angle=0; //pencher l'arbre de tant degrès
+        bg1Tree2.scale=0.8;
 
+        //terrain 1
         let bg1Terrain3=this.add.image(-400,200, 'bg1-terrain-3').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain3);
 
         //terraine deux
-
         let bg1Terrain1=this.add.image(650,300, 'bg1-terrain-1').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain1);
         bg1Terrain1.scale=0.6;
+
+
         //-------------ground (premier plan noir)---------------------------
 
         /**
@@ -132,15 +139,15 @@ class Tableau1 extends Phaser.Scene{
          * Arbre
          * @type {Phaser.GameObjects.Image}
          */
-        let tree1=this.add.image(300,450, 'gTree1').setOrigin(0,1);
-       // tree1.setTintFill(0xFF0000); // pratique pour dbugger A ENLEVER A LA FIN
+        let tree1=this.add.image(880,450, 'gTree1').setOrigin(0,1);
         this.groundContainer.add(tree1);
+        tree1.angle=350;
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
          */
         //ici on va calculer les positions
-        let gMid1=this.add.image(0,350, 'gMid').setOrigin(0,0);
+        let gMid1=this.add.image(-200,350, 'gMid').setOrigin(0,0);
         this.groundContainer.add(gMid1);
         /**
          * Terrain 2
