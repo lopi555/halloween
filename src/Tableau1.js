@@ -82,6 +82,7 @@ class Tableau1 extends Phaser.Scene{
         let bg2Tree2=this.add.image(350,-50, 'bg2-tree-2').setOrigin(0,0);
         this.bg2Container.add(bg2Tree2);
         bg2Tree2.angle=0; //pencher l'arbre de tant degrès
+        bg2Tree2.flipX=true;
 
         //arbres montagne deux
         let bg2Tree3=this.add.image(700,-60, 'bg2-tree-3').setOrigin(0,0);
@@ -105,9 +106,10 @@ class Tableau1 extends Phaser.Scene{
         bg1Tree1.angle=0; //pencher l'arbre de tant degrès
 
         //arbre 2 plan millieu
-        let bg1Tree3=this.add.image(120,-230, 'bg1-tree-3').setOrigin(0,0);
+        let bg1Tree3=this.add.image(120,-120, 'bg1-tree-3').setOrigin(0,0);
         this.bg1Container.add(bg1Tree3);
         bg1Tree3.angle=0; //pencher l'arbre de tant degrès
+        bg1Tree3.scale=0.7;
 
         //terrain 1
 
@@ -116,8 +118,9 @@ class Tableau1 extends Phaser.Scene{
 
         //terraine deux
 
-        let bg1Terrain1=this.add.image(-400,200, 'bg1-terrain-1').setOrigin(0,0);
+        let bg1Terrain1=this.add.image(650,300, 'bg1-terrain-1').setOrigin(0,0);
         this.bg1Container.add(bg1Terrain1);
+        bg1Terrain1.scale=0.6;
         //-------------ground (premier plan noir)---------------------------
 
         /**
