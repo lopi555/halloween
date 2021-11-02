@@ -26,6 +26,7 @@ class Tableau1 extends Phaser.Scene{
         this.load.image('gRight', 'assets/level/ground/g-right.png');
         this.load.image('gTree1', 'assets/level/ground/g-tree-1.png');
         this.load.image('gTree2', 'assets/level/ground/g-tree-2.png');
+        this.load.image('gMush1', 'assets/level/ground/g-mushroom1.png');
 
         //au lieu d'écrire 5 lignes quasi identiques, on charge l'herbe avec une boucle
         // ALGO : ceci est une boucle
@@ -103,9 +104,10 @@ class Tableau1 extends Phaser.Scene{
          * @type {Phaser.GameObjects.Image}
          */
         //arbre 1 plan millieu
-        let bg1Tree1=this.add.image(-40,-150, 'bg1-tree-1').setOrigin(0,0);
+        let bg1Tree1=this.add.image(-40,-100, 'bg1-tree-1').setOrigin(0,0);
         this.bg1Container.add(bg1Tree1);
-        bg1Tree1.angle=0; //pencher l'arbre de tant degrès
+        bg1Tree1.scale=0.6
+        bg1Tree1.flipX=true
 
         //arbre 2 plan millieu
         let bg1Tree3=this.add.image(120,-120, 'bg1-tree-3').setOrigin(0,0);
@@ -144,19 +146,28 @@ class Tableau1 extends Phaser.Scene{
         this.groundContainer.add(tree1);
         tree1.angle=350;
 
-        // arbre 1
-        let tree2=this.add.image(200,450, 'gTree2').setOrigin(0,1);
+        // arbre 2
+        let tree2=this.add.image(250,450, 'gTree2').setOrigin(0,1);
         this.groundContainer.add(tree2);
         tree2.angle=0;
-        tree2.scale=0.8
+        tree2.scale=0.8;
+
+        // arbre 1
+        let tree21=this.add.image(0,450, 'gTree2').setOrigin(0,1);
+        this.groundContainer.add(tree21);
+        tree21.flipX=true;
+
+        let gmush1=this.add.image(50,450, 'gMush1').setOrigin(0,1);
+        this.groundContainer.add(gmush1);
 
         /**
          * Terrain 1
          * @type {Phaser.GameObjects.Image}
          */
         //ici on va calculer les positions
-        let gMid1=this.add.image(-200,350, 'gMid').setOrigin(0,0);
+        let gMid1=this.add.image(-180,350, 'gMid').setOrigin(0,0);
         this.groundContainer.add(gMid1);
+
         /**
          * Terrain 2
          * @type {Phaser.GameObjects.Image}
